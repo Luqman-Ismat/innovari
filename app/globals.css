@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-strong-bg: rgba(0, 0, 0, 0.05);
+  --glass-strong-border: rgba(0, 0, 0, 0.12);
+  --glass-weak-bg: rgba(0, 0, 0, 0.01);
+  --glass-weak-border: rgba(0, 0, 0, 0.04);
+  --text-primary: rgb(0, 0, 0);
+  --text-secondary: rgb(64, 64, 64);
+  --text-tertiary: rgb(128, 128, 128);
+  --accent-color: rgb(59, 130, 246);
+  --success-color: rgb(34, 197, 94);
+  --warning-color: rgb(251, 191, 36);
+  --error-color: rgb(239, 68, 68);
+}
+
+[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-strong-bg: rgba(255, 255, 255, 0.05);
+  --glass-strong-border: rgba(255, 255, 255, 0.12);
+  --glass-weak-bg: rgba(255, 255, 255, 0.01);
+  --glass-weak-border: rgba(255, 255, 255, 0.04);
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(209, 213, 219);
+  --text-tertiary: rgb(156, 163, 175);
+  --accent-color: rgb(96, 165, 250);
+  --success-color: rgb(74, 222, 128);
+  --warning-color: rgb(251, 191, 36);
+  --error-color: rgb(248, 113, 113);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  color: var(--text-primary);
+  background: rgb(var(--background-rgb));
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Minimal glass effects */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-weak {
+  background: var(--glass-weak-bg);
+  border: 1px solid var(--glass-weak-border);
+}
+
+.glass-strong {
+  background: var(--glass-strong-bg);
+  border: 1px solid var(--glass-strong-border);
+}
+
+/* Theme-aware text colors */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+/* Theme-aware accent colors */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-error {
+  color: var(--error-color);
+}
+
+/* Focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.focus-ring:focus {
+  --tw-ring-color: var(--accent-color);
+  --tw-ring-offset-color: rgb(var(--background-rgb));
+}
+
+/* Minimal transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Disable transitions on reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
