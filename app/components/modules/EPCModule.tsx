@@ -3,12 +3,6 @@
 export default function EPCModule() {
   return (
     <div className="space-y-6 p-6">
-      {/* Header */}
-      <div className="glass rounded-xl p-6">
-        <h1 className="text-3xl font-bold text-primary mb-2">EPC Project Management</h1>
-        <p className="text-secondary">Engineering, Procurement, and Construction project controls</p>
-      </div>
-
       {/* Quick Actions */}
       <div className="glass rounded-xl p-6">
         <h2 className="text-xl font-semibold text-primary mb-4">Quick Actions</h2>

@@ -84,12 +84,6 @@ const ProjectManagementModule = () => {
 
   return (
     <div className="space-y-6 p-6">
-      {/* Header */}
-      <div className="glass rounded-xl p-6">
-        <h1 className="text-3xl font-bold text-primary mb-2">Project Management</h1>
-        <p className="text-secondary">Manage projects, tasks, and team collaboration</p>
-      </div>
-
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="glass rounded-xl p-6 text-center">

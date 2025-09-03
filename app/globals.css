@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -50,7 +51,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
 }
 
 body {
@@ -68,17 +69,14 @@ a {
 /* Minimal glass effects */
 .glass {
   background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
 }
 
 .glass-weak {
   background: var(--glass-weak-bg);
-  border: 1px solid var(--glass-weak-border);
 }
 
 .glass-strong {
   background: var(--glass-strong-bg);
-  border: 1px solid var(--glass-strong-border);
 }
 
 /* Theme-aware text colors */
@@ -131,4 +129,83 @@ a {
   * {
     transition: none !important;
   }
+}
+
+/* Logo and Loading Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Component collision bounce animation */
+@keyframes component-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.animate-bounce {
+  animation: component-bounce 0.6s ease-in-out;
+}
+
+.bounce-animation {
+  animation: bounce 1s infinite;
+}
+
+/* Logo specific styles */
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.logo-dot {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+/* Custom tooltip styling */
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass-strong-bg);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 0.5rem;
+}
+
+[title]:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0.5rem solid transparent;
+  border-top-color: var(--glass-strong-bg);
+  z-index: 1000;
+  margin-bottom: -0.5rem;
 }

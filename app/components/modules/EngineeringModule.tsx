@@ -14,12 +14,6 @@ export default function EngineeringModule() {
 
   return (
     <div className="space-y-6 p-6">
-      {/* Header */}
-      <div className="glass rounded-xl p-6">
-        <h1 className="text-3xl font-bold text-primary mb-2">Engineering Module</h1>
-        <p className="text-secondary">P&ID Design, Equipment Management, and Advanced Piping</p>
-      </div>
-
       {/* Tool Selection */}
       <div className="glass rounded-xl p-6">
         <h2 className="text-xl font-semibold text-primary mb-4">Design Tools</h2>
@@ -46,7 +40,7 @@ export default function EngineeringModule() {
       {/* Design Canvas */}
       <div className="glass rounded-xl p-6">
         <h2 className="text-xl font-semibold text-primary mb-4">Design Canvas</h2>
-        <div className="border-2 border-dashed border-glass-300 h-96 flex items-center justify-center">
+        <div className="h-96 flex items-center justify-center bg-glass-weak rounded-lg">
           <div className="text-center">
             <p className="text-primary font-medium">Design Canvas</p>
             <p className="text-secondary text-sm">Select a tool to start designing</p>
